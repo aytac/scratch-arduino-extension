@@ -572,6 +572,37 @@
       ['-'],
       ['r', 'map %n from %n %n to %n %n', 'mapValues', 50, 0, 100, -240, 240]
     ],
+tr: [
+      ['h', 'Cihaz bağlandığında', 'whenConnected'],
+      [' ', '%m.hwOut yı pin %n e bağla', 'connectHW', 'led A', 3],
+      [' ', '%m.hwIn yi analog %n e bağla', 'connectHW', 'rotation knob', 0],
+      ['-'],
+      [' ', '%m.leds yı %m.outputs olarak ayarla', 'digitalLED', 'led A', 'on'],
+      [' ', '%m.leds nın parlaklığını % %n olarak ayarla', 'setLED', 'led A', 100],
+      [' ', '%m.leds nın parlaklığını % %n değiştir', 'changeLED', 'led A', 20],
+      ['-'],
+	  
+      [' ', '%m.servos yu %n dereceye çevir', 'rotateServo', 'servo A', 180],
+      [' ', '%m.servos yu %n derece değiştir', 'changeServo', 'servo A', 20],
+      ['-'],
+	  
+      ['h', '%m.buttons nın durumu %m.btnStates olduğunda', 'whenButton', 'button A', 'pressed'],
+      ['b', '%m.buttons basılı ise', 'isButtonPressed', 'button A'],
+      ['-'],
+      ['h', '%m.hwIn %m.ops %n% olduğunda', 'whenInput', 'rotation knob', '>', 50],
+      ['r', '%m.hwIn yı oku', 'readInput', 'rotation knob'],
+      ['-'],
+      [' ', 'Pin %n nın değerini %m.outputs yap', 'digitalWrite', 1, 'on'],
+      [' ', 'Pin %n nın değerini %n% yap', 'analogWrite', 3, 100],
+      ['-'],
+      ['h', 'Pin %n in durumu %m.outputs olduğunda', 'whenDigitalRead', 1, 'on'],
+      ['b', 'Pin %n in durumu açık ise', 'digitalRead', 1],
+      ['-'],
+      ['h', 'Analog %n in durumu %m.ops %n% olduğunda', 'whenAnalogRead', 1, '>', 50],
+      ['r', 'analog %n i oku', 'analogRead', 0],
+      ['-'],
+      ['r', '%n değerini %n ile %n aralığından %n ile %n aralığına oranla', 'mapValues', 50, 0, 100, -240, 240]
+    ],
     de: [
       ['h', 'Wenn Arduino verbunden ist', 'whenConnected'],
       [' ', 'Verbinde %m.hwOut mit Pin %n', 'connectHW', 'LED A', 3],
@@ -959,6 +990,16 @@
       hwOut: ['led A', 'led B', 'led C', 'led D', 'button A', 'button B', 'button C', 'button D', 'servo A', 'servo B', 'servo C', 'servo D'],
       leds: ['led A', 'led B', 'led C', 'led D'],
       outputs: ['on', 'off'],
+      ops: ['>', '=', '<'],
+      servos: ['servo A', 'servo B', 'servo C', 'servo D']
+    },
+    tr: {
+      buttons: ['tuş A', 'tuş B', 'tuş C', 'tuş D'],
+      btnStates: ['basıldı', 'bırakıldı'],
+      hwIn: ['döndürme düğmesi', 'ışık sensörü', 'sıcaklık sensörü'],
+      hwOut: ['led A', 'led B', 'led C', 'led D', 'tuş A', 'tuş B', 'tuş C', 'tuş D', 'servo A', 'servo B', 'servo C', 'servo D'],
+      leds: ['led A', 'led B', 'led C', 'led D'],
+      outputs: ['açık', 'kapalı'],
       ops: ['>', '=', '<'],
       servos: ['servo A', 'servo B', 'servo C', 'servo D']
     },
